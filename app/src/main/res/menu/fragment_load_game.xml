@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:id="@+id/menu_group_base">
+        <item
+            android:id="@+id/menu_item_new_game"
+            android:title="@string/new_game"
+            android:icon="@drawable/ic_menu_add"
+            app:showAsAction="ifRoom|withText"/>
+
+        <item
+            android:id="@+id/menu_item_erase_games"
+            android:checkable="true"
+            android:title="@string/erase_games"
+            android:icon="@drawable/ic_menu_delete"
+            app:showAsAction="ifRoom|withText"/>
+    </group>
+
+    <group
+        android:id="@+id/menu_group_erase">
+        <item
+            android:id="@+id/menu_item_accept_erase"
+            android:title="@string/confirm"
+            android:icon="@drawable/ic_menu_done"
+            app:showAsAction="ifRoom"/>
+
+        <item
+            android:id="@+id/menu_item_cancel_erase"
+            android:title="Cancel"
+            android:icon="@drawable/ic_menu_cancel"
+            app:showAsAction="ifRoom"/>
+    </group>
+</menu>
