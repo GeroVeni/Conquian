@@ -11,7 +11,7 @@ It supports all the basic functionallity (creating / loading a game, adding poin
 
 ## Added Features
 
-* Create new gamefd
+* Create new game
 * Load a game
 * Name the game and select the number of players
 * Enable/disable players
