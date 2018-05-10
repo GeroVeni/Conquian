@@ -6,7 +6,8 @@ Conquian lets you record your conquian games and save them to play later. Updati
 
 ## Release Description
 
-_This release is the initial build of the application._ It supports all the basic functionallity (creating / loading a game, adding points, etc.)
+_This release is the initial build of the application._
+It supports all the basic functionallity (creating / loading a game, adding points, etc.)
 
 ## Added Features
 
