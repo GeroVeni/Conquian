@@ -64,7 +64,7 @@ public class NewGameDialog extends DialogFragment {
                                 GameBase gameBase = GameBase.get(getActivity());
                                 Game game = new Game(mNameEditText.getText().toString(),
                                         mPlayersSeekBar.getProgress() + PLAYER_OFFSET);
-                                gameBase.getGames().add(game);
+                                gameBase.addGame(game);
                                 Intent intent = GameActivity.newIntent(getActivity(), game.getId());
                                 startActivity(intent);
                             }
