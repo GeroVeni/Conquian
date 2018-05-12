@@ -19,6 +19,12 @@ public class GameActivity extends SingleFragmentActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        GameBase.get(this).saveGames();
+    }
+
+    @Override
     public Fragment createFragment() {
         return new GameFragment();
     }

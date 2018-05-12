@@ -46,7 +46,7 @@ public class LoadGameFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_load_game, container, false);
 
-        mRecycler = (RecyclerView) view.findViewById(R.id.game_recycler_view);
+        mRecycler = view.findViewById(R.id.game_recycler_view);
         mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         updateUI();
@@ -57,12 +57,7 @@ public class LoadGameFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-//        int menuRes;
-//        if (mIsEraseMode) {
-//            menuRes = R.menu.fragment_load_game_erase_mode;
-//        } else {
-//            menuRes = R.menu.fragment_load_game;
-//        }
+
         inflater.inflate(R.menu.fragment_load_game, menu);
         if (mIsEraseMode) {
             menu.setGroupVisible(R.id.menu_group_base, false);
@@ -94,7 +89,8 @@ public class LoadGameFragment extends Fragment {
                 List<Game> games = gameBase.getGames();
                 int size = games.size();
                 for (int i = size - 1; i >= 0; i--) {
-                    if (games.get(i).isToDelete()) games.remove(i);
+                    Game game = games.get(i);
+                    if (game.isToDelete()) gameBase.deleteGame(game);
                 }
                 setEraseMode(false);
                 return true;
@@ -120,6 +116,7 @@ public class LoadGameFragment extends Fragment {
             mAdapter = new GameAdapter(games);
             mRecycler.setAdapter(mAdapter);
         } else {
+            mAdapter.setGames(games);
             mAdapter.notifyDataSetChanged();
         }
     }
@@ -137,9 +134,9 @@ public class LoadGameFragment extends Fragment {
             super(itemView);
             itemView.setOnClickListener(this);
 
-            mEraseCheckBox = (CheckBox) itemView.findViewById(R.id.list_item_game_erase_check_box);
-            mNameTextView = (TextView) itemView.findViewById(R.id.list_item_game_name_text_view);
-            mDateTextView = (TextView) itemView.findViewById(R.id.list_item_game_date_text_view);
+            mEraseCheckBox = itemView.findViewById(R.id.list_item_game_erase_check_box);
+            mNameTextView = itemView.findViewById(R.id.list_item_game_name_text_view);
+            mDateTextView = itemView.findViewById(R.id.list_item_game_date_text_view);
         }
 
         public void bindGame(Game game) {
@@ -203,6 +200,10 @@ public class LoadGameFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mGames.size();
+        }
+
+        public void setGames(List<Game> games) {
+            mGames = games;
         }
     }
 }

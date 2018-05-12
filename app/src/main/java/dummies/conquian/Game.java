@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-class Game {
+public class Game {
 
     private UUID mId;
     private String mName;
@@ -16,14 +16,18 @@ class Game {
     private boolean mIsToDelete;
 
     public Game(String name, int playerCount) {
-        mId = UUID.randomUUID();
+        this(UUID.randomUUID(), name, new Date(), playerCount);
+    }
+
+    public Game(UUID id, String name, Date date, int playerCount) {
+        mId = id;
         mName = name;
-        mDate = new Date();
+        mDate = date;
         mPlayers = new ArrayList<>();
         mIsToDelete = false;
-        for (int i=0; i < playerCount; i++) {
-            Player player = new Player("Player #" + i);
-            mPlayers.add(player);
+        for (int i = 0; i < playerCount; i++) {
+            Player player = new Player(mId, "Player #" + i);
+            addPlayer(player);
         }
     }
 
@@ -31,12 +35,12 @@ class Game {
         return mId;
     }
 
-    public void setId(UUID id) {
-        mId = id;
-    }
-
     public List<Player> getPlayers() {
         return mPlayers;
+    }
+
+    public void addPlayer(Player player) {
+        mPlayers.add(player);
     }
 
     public String getName() {

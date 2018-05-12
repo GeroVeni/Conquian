@@ -6,7 +6,7 @@
     <string name="load_game">Load Game</string>
 
     <!-- Toasts -->
-    <string name="zero_condition_toast">Only one player can have 0 score.</string>
+    <string name="zero_condition_toast">Only one player can have 0 score</string>
     <string name="max_value_condition_toast">Hand value cannot exceed 1000</string>
     <string name="disable_toast">You can now enable/disable players</string>
 

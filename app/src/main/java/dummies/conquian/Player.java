@@ -1,18 +1,22 @@
 package dummies.conquian;
 
+import java.util.UUID;
+
 /**
  * Created by George on 9/4/2018.
  */
 
 public class Player {
 
+    private UUID mGameUUID;
     private boolean mIsActive;
     private String mName;
     private int mScore;
     private int mHats;
     private int mCrowns;
 
-    public Player(String name) {
+    public Player(UUID gameUUID, String name) {
+        mGameUUID = gameUUID;
         mIsActive = true;
         mName = name;
         mHats = 0;
@@ -20,8 +24,12 @@ public class Player {
         mCrowns = 0;
     }
 
-    public Player() {
-        this("");
+    public UUID getGameUUID() {
+        return mGameUUID;
+    }
+
+    public void setGameUUID(UUID gameUUID) {
+        this.mGameUUID = gameUUID;
     }
 
     public boolean isActive() {
