@@ -40,7 +40,7 @@ public class GameFragment extends Fragment {
     private Game mGame;
     private RecyclerView mRecyclerView;
     private PlayerAdapter mAdapter;
-    private Button mResetButton; // TODO: 27/4/2018 Open confirmation dialog for reset
+    private Button mResetButton;
     private Button mGoButton;
 
     private boolean mIsDisableMode;
@@ -65,10 +65,10 @@ public class GameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_game, container, false);
 
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.player_recycler_view);
+        mRecyclerView = view.findViewById(R.id.player_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        mResetButton = (Button) view.findViewById(R.id.reset_button);
+        mResetButton = view.findViewById(R.id.reset_button);
         mResetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +76,7 @@ public class GameFragment extends Fragment {
             }
         });
 
-        mGoButton = (Button) view.findViewById(R.id.confirm_button);
+        mGoButton = view.findViewById(R.id.confirm_button);
         mGoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -243,7 +243,7 @@ public class GameFragment extends Fragment {
             mItemView = itemView;
             itemView.setOnClickListener(this);
 
-            mNameTextView = (TextView) itemView.findViewById(R.id.list_item_player_name_text_view);
+            mNameTextView = itemView.findViewById(R.id.list_item_player_name_text_view);
             mNameTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -264,12 +264,12 @@ public class GameFragment extends Fragment {
                     return true;
                 }
             });
-            mScoreTextView = (TextView) itemView
+            mScoreTextView = itemView
                     .findViewById(R.id.list_item_player_score_text_view);
-            mHatsTextView = (TextView) itemView.findViewById(R.id.list_item_player_hats_text_view);
-            mCrownTextView = (TextView) itemView
+            mHatsTextView = itemView.findViewById(R.id.list_item_player_hats_text_view);
+            mCrownTextView = itemView
                     .findViewById(R.id.list_item_player_crowns_text_view);
-            mEditText = (EditText) itemView.findViewById(R.id.list_item_player_edit_text);
+            mEditText = itemView.findViewById(R.id.list_item_player_edit_text);
         }
 
         public void bindPlayer(Player player) {
@@ -345,9 +345,10 @@ public class GameFragment extends Fragment {
     }
 
     private void makeResetDialog() {
-        // TODO: 9/5/2018 Dialog does not show well
-        TextView view = new TextView(getActivity());
-        view.setText(R.string.reset_dialog);
+
+        View view = LayoutInflater.from(getActivity())
+                .inflate(R.layout.dialog_reset, null);
+
         AlertDialog dialog = new AlertDialog.Builder(getActivity())
                 .setTitle(R.string.reset_dialog_title)
                 .setView(view)

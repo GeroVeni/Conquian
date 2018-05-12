@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Conquian</string>
     <string name="confirm_button_label">Πάμε!</string>
     <string name="score_edit_text_hint">Βαθμοί</string>
     <string name="dialog_name_title">Εισάγετε το όνομα του παίκτη:</string>
@@ -20,4 +19,7 @@
     <string name="name_change_toast">Κρατήστε πατημένο το όνομα για να το αλλάξετε</string>
     <string name="reset_dialog_title">Επανεκκίνηση παρόντος παιχνιδιού</string>
     <string name="reset_dialog">Είστε σίγουροι ότι θέλετε να συνεχίσετε; Αυτή η ενέργεια θα διαγράψει όλη τη πρόοδο του παιχνιδιού</string>
+    <string name="select_all">Επιλογή όλων</string>
+    <string name="rules">Κανόνες</string>
+    <string name="info_description">Πληροφορίες</string>
 </resources>

@@ -77,12 +77,16 @@ public class LoadGameFragment extends Fragment {
                 dialog.show(fragmentManager, NewGameDialog.TAG);
                 return true;
             case R.id.menu_item_erase_games:
-                // TODO: 8/5/2018 Add an erase_all items to erase all the games
-                // or select_all to select all items for erasing
                 for (Game game : GameBase.get(getActivity()).getGames()) {
                     game.setToDelete(false);
                 }
                 setEraseMode(true);
+                return true;
+            case R.id.menu_item_select_all:
+                for (Game game : GameBase.get(getActivity()).getGames()) {
+                    game.setToDelete(true);
+                }
+                updateUI();
                 return true;
             case R.id.menu_item_accept_erase:
                 GameBase gameBase = GameBase.get(getActivity());
