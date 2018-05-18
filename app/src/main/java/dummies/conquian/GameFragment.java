@@ -60,6 +60,8 @@ public class GameFragment extends Fragment {
         mIsDisableMode = false;
     }
 
+    // TODO: 18/5/2018 Change column width to display greek titles properly 
+    
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -203,6 +205,8 @@ public class GameFragment extends Fragment {
 
     public void setDisableMode(boolean disableMode) {
         mIsDisableMode = disableMode;
+        mGoButton.setEnabled(!disableMode);
+        mResetButton.setEnabled(!disableMode);
         getActivity().invalidateOptionsMenu();
         updateUI();
     }

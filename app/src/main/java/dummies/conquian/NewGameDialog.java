@@ -62,7 +62,11 @@ public class NewGameDialog extends DialogFragment {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 GameBase gameBase = GameBase.get(getActivity());
-                                Game game = new Game(mNameEditText.getText().toString(),
+                                String gameName = mNameEditText.getText().toString();
+                                if (gameName.equals("")) {
+                                    gameName = getString(R.string.unnamed_game);
+                                }
+                                Game game = new Game(gameName,
                                         mPlayersSeekBar.getProgress() + PLAYER_OFFSET);
                                 gameBase.addGame(game);
                                 Intent intent = GameActivity.newIntent(getActivity(), game.getId());

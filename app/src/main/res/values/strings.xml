@@ -1,32 +1,37 @@
 <resources>
     <string name="app_name" translatable="false">Conquian</string>
-    <string name="version" translatable="false">v0.2.0</string>
+    <string name="version" translatable="false">v0.2.1</string>
 
     <!-- Main menu -->
     <string name="new_game">New Game</string>
     <string name="load_game">Load Game</string>
+    <string name="rules">Rules</string>
+    <string name="info_description">Info</string>
 
     <!-- Toasts -->
     <string name="zero_condition_toast">Only one player can have 0 score</string>
     <string name="max_value_condition_toast">Hand value cannot exceed 1000</string>
     <string name="disable_toast">You can now enable/disable players</string>
 
+    <!-- Load Game Screen -->
+    <string name="erase_games">Erase games</string>
+    <string name="unnamed_game">Unnamed Game</string>
+    <string name="confirm">Confirm</string>
+    <string name="name_label">Game Name:</string>
+    <string name="players_label">Select the number of players:</string>
+    <string name="select_all">Select all</string>
+
     <!-- Game Screen -->
     <string name="confirm_button_label">GO!</string>
     <string name="reset_button_label">RESET</string>
-    <string name="score_edit_text_hint">Enter score</string>
+    <string name="score_edit_text_hint" translatable="false">0</string>
     <string name="dialog_name_title">Set player name:</string>
-    <string name="confirm">Confirm</string>
-    <string name="erase_games">Erase games</string>
-    <string name="unnamed_game">Unnamed Game</string>
-    <string name="name_label">Game Name:</string>
-    <string name="players_label">Select the number of players:</string>
     <string name="disable_players">Disable Players</string>
     <string name="name_change_toast">Hold name to change it</string>
     <string name="reset_dialog">Are you sure you want to proceed ? This action will erase all current game progress.</string>
     <string name="reset_dialog_title">Reset Current Game</string>
     <string name="cancel">Cancel</string>
-    <string name="select_all">Select all</string>
-    <string name="rules">Rules</string>
-    <string name="info_description">Info</string>
+    <string name="player_name">Player name</string>
+    <string name="score">Score</string>
+    <string name="input">Input</string>
 </resources>

@@ -1,8 +1,21 @@
+# Conquian v0.2.1 17/05/18
+
+## Release Description
+
+This release enhances the visual aspect of the game screen,
+by adding column titles and proper alignment of the content.
+
+## Changes
+
+* Added title bar in the game screen for the respective columns
+* Player names and scores are aligned in columns
+* 'Reset' and 'Go' buttons are disabled when in player disabling mode
+* Creating an unnamed game (i.e. not passing a name for it) creates a
+game with name 'Unnamed game'
+
+---
+
 # Conquian v0.2.0 12/05/18
-
-## Overview
-
-Conquian lets you record your conquian games and save them to play later. Updating the score is done automatically using a set of game rules internally.
 
 ## Release Description
 
@@ -21,11 +34,18 @@ the app
 
 # Conquian v0.1.0 09/05/18
 
+## Overview
+
+Conquian lets you record your conquian games and save them to play later.
+Updating the score is done automatically using a set of game rules
+internally.
+
 ## Release Description
 
 _This release is the initial build of the application._
 
-It supports all the basic functionallity (creating / loading a game, adding points, etc.)
+It supports all the basic functionallity (creating / loading a game,
+adding points, etc.)
 
 ## Added Features
 

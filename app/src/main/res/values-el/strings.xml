@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="confirm_button_label">Πάμε!</string>
-    <string name="score_edit_text_hint">Βαθμοί</string>
     <string name="dialog_name_title">Εισάγετε το όνομα του παίκτη:</string>
     <string name="new_game">Νέο Παιχνίδι</string>
     <string name="load_game">Φόρτωση Παιχνιδιού</string>
@@ -22,4 +21,7 @@
     <string name="select_all">Επιλογή όλων</string>
     <string name="rules">Κανόνες</string>
     <string name="info_description">Πληροφορίες</string>
+    <string name="input">Νέο σκορ</string>
+    <string name="score">Βαθμοί</string>
+    <string name="player_name">Όνομα παίκτη</string>
 </resources>
